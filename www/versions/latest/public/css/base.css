@@ -1,0 +1,60 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #6B3E0C;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    padding-top: 10px;
+}
+
+.container {
+    width: auto;
+    padding: 0 15px;
+}
+
+.footer .container {
+    height: 100%;
+}
+
+.jumbotron {
+    background-color: #FFFBDF;
+}
+
+.footer, .navbar {
+    background-color: #C8A063;
+}
+
+.navbar a, .navbar li a, .btn-warning {
+    color: #5B2E0C;
+}
+
+.navbar a:hover, .navbar li a:hover {
+    background-color: #A88043;
+}
+
+.active {
+    background-color: #C8A063;
+}
+
+.icon-bar {
+    background-color: #CF9A06;
+}
+
+.resistor {
+    margin: 20px;
+}

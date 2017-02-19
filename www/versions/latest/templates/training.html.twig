@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{# expects variable `page` with the key `owner` #}
+
+{% block title %}
+{{ parent() }} &bull; Resistor Value Training
+{% endblock %}
+
+{% block content %}
+<div id="test">
+<label for="bands_count">Bands to train: </label> <select id="bands_count">
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select><br />
+<embed id="resistor" class="resistor" src="b/res.svg" type="image/svg+xml" /><br />
+<p>
+<input value="" id="answer_digits" />
+<select id="answer_multiplier">
+<option value="-3">mΩ</option>
+<option value="0">Ω</option>
+<option value="3">kΩ</option>
+<option value="6">MΩ</option>
+<option value="9">GΩ</option>
+</select>
+± <select id="answer_tolerance">
+<option value="0">0.05%</option>
+<option value="1">0.10%</option>
+<option value="2">0.25%</option>
+<option value="3">0.5%</option>
+<option value="4">1%</option>
+<option value="5">2%</option>
+<option value="6">5%</option>
+<option value="7">10%</option>
+</select>
+<input id="answer_ppm" size="4"/><label id="answer_ppm_label" for="answer_ppm">ppm</label>
+<button id="next_stage">Check!</button><span id="eval_answer"></span><br />
+<span id="feedback_value"></span> <span id="feedback_tolerance"></span> <span id="feedback_ppm"></span>
+</p>
+</div>
+
+{% endblock %} {# content #}

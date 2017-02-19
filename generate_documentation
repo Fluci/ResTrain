@@ -1,0 +1,19 @@
+#!/bin/sh
+
+RETURN=0
+
+EXEC=jsdoc
+
+echo "Looking for jsdoc command ..."
+${EXEC} -v
+
+if [ $? != 0 ]
+then
+    echo "jsdoc not found." 1>&2
+    RETURN=1
+else
+    ${EXEC} -c ./jsdoc.json
+    RETURN=$?
+fi
+
+exit $RETURN

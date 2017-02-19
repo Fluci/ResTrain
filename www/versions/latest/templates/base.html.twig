@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="{{ page.langCode }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{{ page.title|default("") }}{% endblock %}</title>
+
+        {% block CSS %}
+            {% for css in page.stylesheets|default([]) %}
+                <link href="{{ css.url }}" rel="stylesheet" type="text/css"{% if css.media is defined %} media="{{ css.media }}"{% endif %} />
+            {% endfor %}
+        {% endblock %}
+
+        {% block jsIncludes %}
+            {% for js in page.jsIncludes|default([]) %}
+                <script type="text/javascript" src="{{ js }}"></script>
+            {% endfor %}
+        {% endblock %}
+
+        {% block jsHead %}
+            {% for js in page.jsHeadSnippets|default([]) %}
+            <script type="text/javascript">{{ js|raw }}</script>
+            {% endfor %}
+        {% endblock %}
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        {% block htmlHeader %}
+        {% endblock %}
+    </head>
+    <body>
+    {% block body %}
+
+        {% block all %}
+
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar"
+                        aria-expanded="false"
+                        aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="./">ResTrain</a>
+                        <p class="navbar-text">
+                            Reading resistor colour codes is easy.
+                        </p>
+                    </div> {# navbar-header #}
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="navbar-text text-center" id="clock_out"></li>
+                            {% for site, url in page.nav %}
+                                <li><a href="{{ url }}"{% if page.nav_active == site %} class="active"{% endif %}>{{ page.lang[site] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div> {# navbar #}
+                    <!--/.nav-collapse -->
+                </div> {# container #}
+            </nav> {# nav #}
+            {% block contentEnv %}
+                <div class="container">
+                    <div class="jumbotron">
+                        {% block content %}
+                            A nice body!
+                        {% endblock %}{# content #}
+                    </div> {# jumbotron #}
+                </div> {# container #}
+            {% endblock %} {# contentEnv #}
+
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-center">
+                        {% block footerCenter %}<a class="btn btn-warning" href="https://github.com/Fluci/ResTrain">Fork me on github!</a>{% endblock %}{# footerCenter #}
+                    </p>
+                </div>
+            </footer>
+
+        {% endblock %}{# all #}
+
+        {% block afterAll %}{% endblock %}{# afterAll #}
+
+        {% block jsFoot %}
+            {% for js in page.jsFootSnippets|default([]) %}
+                <script type="text/javascript">{{ js|raw }}</script>
+            {% endfor %}
+        {% endblock %}{# jsFoot #}
+
+    {% endblock %}{# body #}
+    <script src="e/b/js/bootstrap.min.js"></script>
+    <script>
+        var localClock = new Clock(function(newTime) {
+            document.getElementById('clock_out').innerText = newTime;
+        });
+        localClock.start();
+    </script>
+    </body>
+</html>
