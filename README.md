@@ -6,6 +6,8 @@ On a cloudy Friday afternoon, I decided to finally get rid of this item on my bu
 
 This is the result.
 
-As with all my projects, feel free to comment and criticise. I'm especially keen on suggestions for better grey/silver and yellow/gold gradients in the `.../public/b/res.svg` vector graphic, since I'm not artist enough to put more time in it. As always, HTML design suggestions (or better push-request) of all kinds are highly welcome.
+As with all my projects, feel free to comment and critizise. I'm especially keen on suggestions for better grey/silver and yellow/gold gradients in the `.../public/b/res.svg` vector graphic, since I'm not artist enough to put more time in it.
 
-You can find a live version at [http://restrain.serena-mueller.ch](restrain.serena-mueller.ch).
+You can find a live version at [restrain.serena-mueller.ch](http://restrain.serena-mueller.ch).
+
+The only thing left for me is to learn the colour codes … o:)
