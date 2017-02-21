@@ -21,7 +21,9 @@ var tt;
 function init(){
     var setting = document.getElementById(\'bands_count\');
     setting.onchange = function(){tt.setToBands(parseInt(this.value));}
-    tt = new Tester(document.getElementById(\'test\'));
+    var resObj = document.getElementById(\'resistor\');
+    var resCtrl = new ResistorController(getSVGContent(resObj));
+    tt = new Tester(document.getElementById(\'test\'), resCtrl);
     setting.onchange();
 }
 window.addEventListener("load", init, false);';
