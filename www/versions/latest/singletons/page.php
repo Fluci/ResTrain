@@ -19,12 +19,13 @@ return array(
         'about' => 'About',
     ),
     'stylesheets' => array(
-        array('url' => 'e/b/css/bootstrap.min.css'),
+        array('url' => 'e/bootstrap/dist/css/bootstrap.min.css'),
         array('url' => 'css/base.css'),
     ),
     'jsIncludes' => array(
         'js/base.js',
-        'e/jquery-3.1.1.min.js',
+        'e/jquery/dist/jquery.min.js',
+        'e/bootstrap/dist/js/bootstrap.min.js',
     ),
     'jsHeadSnippets' => array(),
     'nav_active' => null,

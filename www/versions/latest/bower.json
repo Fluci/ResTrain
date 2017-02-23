@@ -1,0 +1,22 @@
+{
+  "name": "restrain",
+  "homepage": "https://github.com/Fluci/ResTrain",
+  "authors": [
+    "Felice Serena <felice@serena-mueller.ch>"
+  ],
+  "description": "Learn resistor values.",
+  "main": "index.php",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
